@@ -3,24 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
 <title>Social Media Impact on Student Life — DS422 ML-I Lab Project</title>
 <style>
 :root{
-  --navy:#0f2040; --navy2:#16294f; --ink:#1b2436; --muted:#5b6b84;
-  --bg:#f4f7fb; --card:#ffffff; --line:#dfe7f2;
-  --cyan:#4fc3d9; --violet:#8f7bd8; --pink:#f27ba7; --green:#5cb87a; --amber:#f2a541;
-  --shadow:0 10px 30px rgba(15,32,64,.12);
+  color-scheme:dark;
+  --navy:#0f2040; --navy2:#16294f; --ink:#e6edf7; --muted:#9db0cc; --heading:#eef4ff;
+  --bg:#0a101f; --card:#131e36; --line:#243355;
+  --cyan:#5fd3e8; --violet:#a99bf0; --pink:#f27ba7; --green:#5cb87a; --amber:#f2a541;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-a{color:#0b6fa4}
+a{color:#7dd3fc}
 h1,h2,h3{line-height:1.2;margin:0 0 .5em}
 p{margin:.4em 0 .9em}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 section{padding:64px 0 8px}
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:700;color:var(--violet)}
-h2{font-size:2rem;color:var(--navy)}
+h2{font-size:2rem;color:var(--heading)}
 .sub{color:var(--muted);max-width:760px}
 nav{position:sticky;top:0;z-index:50;background:rgba(15,32,64,.96);backdrop-filter:blur(6px);box-shadow:0 4px 18px rgba(0,0,0,.2)}
 nav .wrap{display:flex;align-items:center;gap:18px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
@@ -49,13 +51,13 @@ nav .pill{margin-left:auto;background:var(--pink);color:#fff;font-weight:700;fon
 .phone{position:absolute;left:50%;top:8px;width:230px;height:400px;margin-left:-115px;transform-style:preserve-3d;transform:rotateX(8deg) rotateY(-18deg);transition:transform .6s ease;animation:floaty 6s ease-in-out infinite}
 .scene:hover .phone{transform:rotateX(2deg) rotateY(8deg) scale(1.03)}
 @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -14px}}
-.phone .screen{position:absolute;inset:0;background:linear-gradient(160deg,#ffffff,#eaf6ff);border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,.45);padding:18px;color:#16294f;transform:translateZ(28px)}
+.phone .screen{position:absolute;inset:0;background:linear-gradient(160deg,#1c2c4d,#0f1830);border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,.55);padding:18px;color:#e6edf7;transform:translateZ(28px)}
 .phone .screen h4{margin:2px 0;font-size:1rem}
-.phone .screen small{color:#5b6b84}
-.meter{height:10px;background:#e3ebf5;border-radius:99px;margin:8px 0 14px;overflow:hidden}
+.phone .screen small{color:#9db0cc}
+.meter{height:10px;background:#26344f;border-radius:99px;margin:8px 0 14px;overflow:hidden}
 .meter i{display:block;height:100%;border-radius:99px}
 .chiprow{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.chip{background:#eef4ff;border:1px solid #d5e3f7;border-radius:99px;padding:4px 9px;font-size:.75rem;font-weight:700}
+.chip{background:#1c2c4d;border:1px solid #33456b;color:#dbe7fa;border-radius:99px;padding:4px 9px;font-size:.75rem;font-weight:700}
 .cube{position:absolute;width:64px;height:64px;transform-style:preserve-3d;animation:spin3d 12s linear infinite}
 .cube i{position:absolute;inset:0;border-radius:12px;opacity:.92}
 .cube .f1{background:var(--cyan);transform:translateZ(32px)}
@@ -71,26 +73,26 @@ nav .pill{margin-left:auto;background:var(--pink);color:#fff;font-weight:700;fon
 .g4{grid-template-columns:repeat(4,1fr)}
 .g2{grid-template-columns:repeat(2,1fr)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
-.card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 18px 38px rgba(15,32,64,.18);border-color:var(--cyan)}
-.card h3{color:var(--navy);font-size:1.12rem}
-.card .big{font-size:2.1rem;font-weight:800;color:var(--navy);line-height:1}
+.card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 18px 38px rgba(0,0,0,.55);border-color:var(--cyan)}
+.card h3{color:var(--heading);font-size:1.12rem}
+.card .big{font-size:2.1rem;font-weight:800;color:var(--heading);line-height:1}
 .card .big small{font-size:1rem;color:var(--muted)}
 .stat-ic{font-size:1.7rem}
 .tilt{transform-style:preserve-3d;will-change:transform}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 th{background:var(--navy);color:#fff;text-align:left;padding:11px 12px;font-size:.92rem}
 td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:.94rem;vertical-align:top}
 tr:last-child td{border-bottom:none}
 tbody tr{transition:background .2s,transform .2s}
-tbody tr:hover{background:#eef7ff;transform:scale(1.005)}
+tbody tr:hover{background:#1a2a4a;transform:scale(1.005)}
 td.num,th.num{text-align:right}
-.best-row{background:#eafaf0 !important;font-weight:600}
+.best-row{background:#123324 !important;font-weight:600}
 .tag{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.78rem;font-weight:700}
-.tag.ben{background:#d9f2e2;color:#20663a}.tag.neg{background:#ffe0e8;color:#8c1f3f}.tag.neu{background:#ddeeff;color:#1d4e89}
-.chart{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);transition:.25s}
-.chart:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,32,64,.16)}
+.tag.ben{background:#123324;color:#86efac}.tag.neg{background:#3d1420;color:#fda4af}.tag.neu{background:#14273f;color:#93c5fd}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);transition:.25s}
+.chart:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.55)}
 .bar-row{display:grid;grid-template-columns:150px 1fr 64px;align-items:center;gap:10px;margin:12px 0}
-.bar-track{height:22px;background:#edf2f8;border-radius:99px;overflow:hidden}
+.bar-track{height:22px;background:#22304d;border-radius:99px;overflow:hidden}
 .bar-fill{height:100%;border-radius:99px;transition:width .6s ease,filter .2s}
 .bar-row:hover .bar-fill{filter:brightness(1.12) saturate(1.2)}
 .bar-row:hover{font-weight:700}
@@ -99,7 +101,7 @@ td.num,th.num{text-align:right}
 .cm div{padding:14px 8px;text-align:center;border-radius:10px;font-weight:700;transition:transform .2s}
 .cm div:hover{transform:scale(1.06);z-index:2;box-shadow:0 8px 18px rgba(0,0,0,.2)}
 .cm .hd{background:var(--navy);color:#fff;font-size:.85rem}
-.cm .rl{background:#eef2f8;font-size:.85rem}
+.cm .rl{background:#1a2742;font-size:.85rem}
 .predict{background:linear-gradient(135deg,#0f2040,#274b8a);border-radius:22px;padding:30px;color:#fff;box-shadow:0 20px 44px rgba(15,32,64,.35)}
 .predict h2{color:#fff}
 .predict .sub{color:#c6d6ef}
@@ -109,18 +111,18 @@ td.num,th.num{text-align:right}
 .field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
 .field label output{float:right;color:var(--cyan);font-weight:800}
 .field input[type=range]{width:100%;accent-color:var(--pink)}
-.field select{width:100%;padding:9px;border-radius:9px;border:1px solid #cbd8ea;font-size:.95rem;background:#fff;color:#16294f}
+.field select{width:100%;padding:9px;border-radius:9px;border:1px solid #33456b;font-size:.95rem;background:#0f1830;color:#e6edf7}
 .field .hint{font-size:.8rem;color:#aebfe0;margin-top:4px}
-.result{margin-top:22px;background:#fff;color:var(--ink);border-radius:16px;padding:22px;display:none;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.result{margin-top:22px;background:#101a30;color:var(--ink);border-radius:16px;padding:22px;display:none;box-shadow:0 12px 30px rgba(0,0,0,.3)}
 .result.show{display:block;animation:pop .35s ease}
 @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
 .result .pred{font-size:2rem;font-weight:800}
-.result .pred.Beneficial{color:#20663a}.result .pred.Negative{color:#8c1f3f}.result .pred.Neutral{color:#1d4e89}
+.result .pred.Beneficial{color:#4ade80}.result .pred.Negative{color:#f87171}.result .pred.Neutral{color:#60a5fa}
 .vote-bar{display:flex;height:14px;border-radius:99px;overflow:hidden;margin:12px 0}
 .vote-bar i{display:block;height:100%}
-.note{background:#fff8e1;border-left:5px solid var(--amber);padding:14px 16px;border-radius:10px;margin:16px 0;color:#5c4a12}
-.note.blue{background:#eaf3ff;border-left-color:#3a7bd5;color:#173a63}
-.note.green{background:#eafaf0;border-left-color:var(--green);color:#1e5c33}
+.note{background:#2b2113;border-left:5px solid var(--amber);padding:14px 16px;border-radius:10px;margin:16px 0;color:#fde68a}
+.note.blue{background:#12233f;border-left-color:#3a7bd5;color:#bfdbfe}
+.note.green{background:#12291a;border-left-color:var(--green);color:#86efac}
 footer{background:var(--navy);color:#b9cbe6;padding:36px 0;margin-top:70px;font-size:.92rem}
 footer b{color:#fff}
 @media(max-width:860px){
@@ -169,7 +171,7 @@ footer b{color:#fff}
     <div class="phone" id="phone"><div class="screen">
       <small>LIVE PREDICTION · SVM</small>
       <h4>Overall Impact</h4>
-      <div style="font-size:2rem;font-weight:800;color:#20663a">Beneficial</div>
+      <div style="font-size:2rem;font-weight:800;color:#4ade80">Beneficial</div>
       <p style="font-size:.85rem;margin:4px 0 10px">Typical student · 4.7 h/day · 6.8 h sleep</p>
       <small>Confidence votes (OvO)</small>
       <div class="meter"><i style="width:82%;background:var(--green)"></i></div>
@@ -439,7 +441,7 @@ function renderCharts() {
     row.forEach(function (v, j) {
       const a = 0.08 + 0.85 * v / maxV;
       const bg = i === j ? 'rgba(92,184,122,' + a + ')' : 'rgba(242,123,167,' + a + ')';
-      html += '<div style="background:' + bg + ';color:' + (a > 0.5 ? '#fff' : '#1b2436') + '">' + v + '</div>';
+      html += '<div style="background:' + bg + ';color:' + (a > 0.5 ? '#fff' : '#e6edf7') + '">' + v + '</div>';
     });
   });
   document.getElementById('svmCm').innerHTML = html;
@@ -530,7 +532,7 @@ function doPredict() {
     '<p>' + explain(inp, res) + '</p>' +
     '<p><b>How the SVM voted (one-vs-one):</b> Beneficial ' + res.votes[0] + ' · Negative ' + res.votes[1] + ' · Neutral ' + res.votes[2] + ' (of 3 pairwise votes)</p>' +
     '<div class="vote-bar">' + bar + '</div>' +
-    '<p style="font-size:.88rem;color:#5b6b84">Decision values — Beneficial vs Negative: ' + res.decisionValues[0].toFixed(3) +
+    '<p style="font-size:.88rem;color:#9db0cc">Decision values — Beneficial vs Negative: ' + res.decisionValues[0].toFixed(3) +
     ' · Beneficial vs Neutral: ' + res.decisionValues[1].toFixed(3) +
     ' · Negative vs Neutral: ' + res.decisionValues[2].toFixed(3) +
     '. Positive means the first-named class wins that pair. Remember: on the 900-student test set this model was right 96.67% of the time, but it is not perfect — it mistakes 22 Beneficial students for Neutral.</p>';
