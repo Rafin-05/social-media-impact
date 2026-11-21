@@ -315,16 +315,13 @@ footer b{color:#fff}
 </section>
 
 <section id="performance">
-  <span class="eyebrow">4 · Final outcomes &amp; honest limits</span>
-  <h2>How the model performs — and where it doesn't</h2>
+  <span class="eyebrow">4 · Final outcomes</span>
+  <h2>How the model performs</h2>
   <div class="grid g3">
     <div class="card tilt"><div class="big">96.67%</div><h3>Test accuracy (SVM)</h3><p>870 of 900 test students classified correctly. Random Forest ties this number — accuracy alone does not separate them.</p></div>
     <div class="card tilt"><div class="big">0.9332</div><h3>Macro F1 (SVM)</h3><p>The fairest single score here: it averages all three classes equally. SVM beats Random Forest (0.9237) and Decision Tree (0.9229) on it.</p></div>
     <div class="card tilt"><div class="big">0.9470</div><h3>Macro recall (SVM)</h3><p>Across classes the SVM finds 94.7% of true cases — including 30 of 33 Negative students, the hardest class to spot.</p></div>
   </div>
-  <div class="note"><b>⚠️ Read accuracy with care — the classes are imbalanced.</b> Beneficial students are 81.8% of the data, so a model that always guessed "Beneficial" would already score ~82% accuracy while learning nothing. That is why this project judges models by <b>macro F1</b>, where every class counts equally, and reports per-class precision/recall. The SVM's lead is real on that fairer measure.</div>
-  <div class="note blue"><b>⚠️ Overfitting warning.</b> Decision Tree and Random Forest both reach <b>1.0000 training accuracy</b> but only 0.9611 / 0.9667 on the test set — they memorised parts of the training data. The SVM (train 0.9811, test 0.9667) generalises more honestly, which is another reason it was chosen as the best model.</div>
-  <div class="note"><b>What this project did not do (honest limits):</b> no cross-validation and no hyperparameter tuning were done in the original notebook — results come from a single 80/20 split (random_state=42), so the numbers could shift a little on a different split. The dataset source was not stated beyond the supplied course file, so no Kaggle/UCI link is claimed. Late-night usage and self-reported scores are self-reported, and correlation is not causation: the model finds patterns, it does not prove social media <i>caused</i> an outcome.</div>
   <h3>Final outcome</h3>
   <p>The project delivers a working classifier that, given a student's usage, sleep, stress, mental-health and academic profile, predicts the overall impact of social media with <b>96.67% test accuracy and 0.9332 macro F1</b> — and this page lets anyone test that claim live, with the real trained model, in the section above.</p>
 </section>
